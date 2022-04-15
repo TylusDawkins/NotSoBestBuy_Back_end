@@ -10,6 +10,16 @@ const GetAllProducts = async (req,res) => {
     }
 }
 
+const GetProductDetails = async (req, res) => {
+    try {
+        const productDetails = await Product.findbyPk(req.params.product_id)
+        res.send(productDetails)
+    } catch (error) {
+        throw error
+    }
+
+}
+
 const UpdateProduct = async (req, res) => {
     try {
         const productId = parseInt(req.params.product_id)
@@ -26,5 +36,6 @@ const UpdateProduct = async (req, res) => {
 
 module.exports = {
     GetAllProducts,
+    GetProductDetails,
     UpdateProduct
 }
