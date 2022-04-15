@@ -1,5 +1,13 @@
 const { OrderDetails } = require('../models')
 
+const GetAllOrderDetails = async (req, res) => {
+    try {
+        const allOrderDetails = await OrderDetails.findAll()
+        res.send(allOrderDetails)
+}   catch (error){
+    throw error
+    }
+}
 
 const UpdateOrderDetails = async (req, res) => {
     try {
@@ -26,6 +34,7 @@ const DeleteOrderDetails = async (req, res) => {
 }
 
 module.exports = {
+    GetAllOrderDetails,
     UpdateOrderDetails,
     DeleteOrderDetails
 }
