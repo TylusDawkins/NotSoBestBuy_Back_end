@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Order.belongsTo(models.Category, {
+      Order.belongsTo(models.User, {
         foreignKey:'orderId',
         as: 'order',
         onDelete: 'CASCADE',
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   order.init({
     userId: DataTypes.INTEGER,
-    products: DataTypes.INTEGER,
+    products: DataTypes.ARRAY,
     price: DataTypes.NUMERIC
   }, {
     sequelize,
