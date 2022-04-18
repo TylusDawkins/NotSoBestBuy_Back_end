@@ -1,19 +1,19 @@
 {
   "development": {
-    "password": null,
-    "database": "database_development",
+    "password": "MadWizard1508!",
+    "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "password": null,
-    "database": "database_test",
+    "password": "MadWizard1508!",
+    "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "password": null,
-    "database": "database_production",
+    "password": "MadWizard1508!",
+    "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
