@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "database_development",
+    "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "database_test",
+    "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "database_production",
+    "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
