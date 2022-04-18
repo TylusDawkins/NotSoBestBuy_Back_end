@@ -21,11 +21,10 @@ module.exports = (sequelize, DataTypes) => {
   order.init({
     userId: DataTypes.INTEGER,
     products: DataTypes.ARRAY,
-    price: DataTypes.NUMERIC
   }, {
     sequelize,
     modelName: 'order',
-    tableName: 'order'
+    tableName: 'orders'
   });
   return Order;
 };
