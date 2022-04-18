@@ -33,6 +33,7 @@ const DeleteOrderDetails = async (req, res) => {
     } throw error
 }
 
+
 module.exports = {
     GetAllOrderDetails,
     UpdateOrderDetails,
