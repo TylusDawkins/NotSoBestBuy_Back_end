@@ -1,18 +1,15 @@
 {
   "development": {
-    "password": "MadWizard1508!",
     "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "password": "MadWizard1508!",
     "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "password": "MadWizard1508!",
     "database": "notsobestbuy",
     "host": "127.0.0.1",
     "dialect": "postgres"
