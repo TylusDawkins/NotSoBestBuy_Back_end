@@ -2,7 +2,7 @@ const { OrderDetails } = require('../models')
 
 const GetAllOrderDetails = async (req, res) => {
     try {
-        const allOrderDetails = await OrderDetails.findAll()
+       const allOrderDetails = await OrderDetails.findAll() 
         res.send(allOrderDetails)
 }   catch (error){
     throw error
