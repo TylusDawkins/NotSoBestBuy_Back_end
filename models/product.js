@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
+      Product.belongsTo(models.Catefory, {
+        as
+      })
     }
   }
   Product.init({
