@@ -5,6 +5,9 @@ const bodyParser = require('body-parser')
 const AuthRouter = require('./routes/AuthRouter')
 const app = express()
 const CategoryRouter = require('./routes/CategoryRouter')
+const ProductRouter = require('./routes/ProductRouter')
+const OrderDetailsRouter = require('./routes/OrderDetailsRouter')
+
 
 const PORT = process.env.PORT || 3001
 
@@ -12,6 +15,8 @@ app.use(cors())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use('/category', CategoryRouter)
+app.use('/cart', OrderDetailsRouter)
+app.use('/product', ProductRouter)
 app.use('/auth', AuthRouter)
 app.use('/', AuthRouter)
 

@@ -5,4 +5,4 @@ Router.get('/', controller.GetAllProducts)
 Router.get('/:product_id', controller.GetProductDetails)
 Router.put('/:property_id', controller.UpdateProduct)
 
-module.export = Router
+module.exports = Router
