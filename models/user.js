@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasOne(models.Cart, {
-        foreignKey:'cart_id',
+        foreignKey:'user_id',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
