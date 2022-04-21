@@ -1,8 +1,9 @@
 require('dotenv').config()
 module.exports = {
   development: {
-    database: 'notsobestbuyback-end',
-    dialect: 'postgres'
+    database: 'notsobestbuy',
+    dialect: 'postgres',
+    password: "MadWizard1508!"
   },
   test: {
     database: 'notsobestbuytest',
