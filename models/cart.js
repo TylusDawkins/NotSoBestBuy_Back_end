@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Cart extends Model {
     /**
@@ -15,15 +13,19 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
-      Cart.hasMany(models.Product, {
-        foreignKey: 'cartId',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
     }
   }
   Cart.init({
-    userId: DataTypes.INTEGER,
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: 'user_id',
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
     name: DataTypes.STRING,
     price: DataTypes.NUMERIC,
     image: DataTypes.STRING,
@@ -31,8 +33,8 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'cart',
-    tableName: 'cart'
+    modelName: 'Cart',
+    tableName: 'carts'
   });
-  return Cart;
+  return Cart
 };
