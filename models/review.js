@@ -11,18 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Review.belongsTo(models.User, {
-        foreignKey: 'cartId',
-        as: 'reviews',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
-      Review.belongsTo(models.Twert, {
-        foreignKey: 'twert_id',
-        as: 'reviews',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
+      // Review.belongsTo(models.User, {
+      //   foreignKey: 'cartId',
+      //   as: 'reviews',
+      //   onDelete: 'CASCADE',
+      //   onUpdate: 'CASCADE'
+      // })
+      // Review.belongsTo(models.Twert, {
+      //   foreignKey: 'twert_id',
+      //   as: 'reviews',
+      //   onDelete: 'CASCADE',
+      //   onUpdate: 'CASCADE'
+      // })
    
     }
   }

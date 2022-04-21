@@ -53,7 +53,9 @@ module.exports = (sequelize, DataTypes) => {
         model: 'products',
         key: 'id'
       }
+    }
     },
+    {
     sequelize,
     modelName: 'Twert',
     tableName: 'twerts'

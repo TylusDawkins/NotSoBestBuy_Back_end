@@ -7,7 +7,7 @@ const app = express()
 const CategoryRouter = require('./routes/CategoryRouter')
 const ProductRouter = require('./routes/ProductRouter')
 const OrderDetailsRouter = require('./routes/OrderDetailsRouter')
-
+const ReviewRouter = require('./routes/ReviewRouter')
 
 const PORT = process.env.PORT || 3001
 
@@ -15,6 +15,7 @@ app.use(cors())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use('/category', CategoryRouter)
+app.use('/review', ReviewRouter)
 app.use('/cart', OrderDetailsRouter)
 app.use('/product', ProductRouter)
 app.use('/auth', AuthRouter)
