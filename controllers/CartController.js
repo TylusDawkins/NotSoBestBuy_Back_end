@@ -3,7 +3,8 @@ const { Cart } = require('../models')
 
 const GetCartProducts = async (req,res) =>{
     try{
-        const items = await Cart.findAll()
+        let userId = parseInt(req.params.user_id)
+        const items = await Cart.findAll({where: {user_id: userId}})
         res.send(items)
     } catch (error){
         throw error
