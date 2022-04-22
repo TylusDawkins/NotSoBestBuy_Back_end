@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Cart extends Model {
     /**
@@ -11,19 +9,50 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Cart.belongsTo(models.User, {
-        as: 'user',
+        foreignKey: 'user_id',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
     }
   }
   Cart.init({
-    userId: DataTypes.INTEGER,
-    productId: DataTypes.INTEGER,
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: 'user_id',
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false},
+    price: {
+      type:DataTypes.NUMERIC,
+      allowNull: false},
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false},
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false},
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1,
+      validate: {
+        min: 1
+      }
+    },
+    categoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false}
   }, {
     sequelize,
-    modelName: 'cart',
-    tableName: 'cart'
+    modelName: 'Cart',
+    tableName: 'carts'
   });
-  return Cart;
+  return Cart
 };
