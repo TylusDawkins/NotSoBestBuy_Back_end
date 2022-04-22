@@ -1,6 +1,5 @@
-const { Review, User, Twert } = require('../models')
+const { User, Twert } = require('../models')
 const { Op, Literal, fn, col } = require('sequelize')
-const review = require('../models/review')
 
 const GetReviewDetails = async (req, res) => {
     try {
