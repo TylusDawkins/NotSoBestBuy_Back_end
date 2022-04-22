@@ -3,7 +3,7 @@ const { Cart } = require('../models')
 
 const GetCartProducts = async (req,res) =>{
     try{
-        const items = await Cart.findAll({where: {user_id: req.params.cart_id}})
+        const items = await Cart.findAll()
         res.send(items)
     } catch (error){
         throw error
@@ -12,7 +12,9 @@ const GetCartProducts = async (req,res) =>{
 
 const AddToCart = async (req,res) =>{ 
     try{
+        let user_id = req.params.id
         productBody = {
+            user_id,
             ...req.body
         }
         newItem = await Cart.create(productBody)
@@ -21,6 +23,21 @@ const AddToCart = async (req,res) =>{
         throw error
     }
 } 
+
+const ChangeQuantity = async (req,res) => {
+    try {
+        let upId = parseInt(req.params.id)
+        let updatedQuantity = await Cart.update(
+            req.body, {
+                where: {id: upId},
+                returning: true
+            }
+        )
+        res.send(updatedQuantity)
+    } catch (error) {
+        throw error
+    }
+}
 
 const RemoveFromCart = async (req,res) =>{
     try{
@@ -34,5 +51,6 @@ const RemoveFromCart = async (req,res) =>{
 module.exports = {
     GetCartProducts,
     AddToCart,
-    RemoveFromCart
+    RemoveFromCart,
+    ChangeQuantity
 }
