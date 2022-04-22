@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
+      User.hasMany(models.Twert, {
+        foreignKey: 'user_id',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
   User.init(
